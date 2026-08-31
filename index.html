@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic 8 ball</title>
+
+
+    <style>
+        #magic8{
+            color: white;
+            background-color: #121212;
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+            cursor: pointer;
+            font-size: 130px;
+            text-align: center;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div id="myID"></div>
+
+    <script>
+
+        //Model
+        let spådommer = ["Du vil gro en missunelsesverdig mustache!", "Du vil vinne 10kr i lotto! Wow!", 
+        "Du vil snuble på en halvspist banan og knuse skjermen på mobilen din D:", "Du vil bli fanget i en while-loop D:", 
+        "Du vil treffe på Lars Monsen neste gang du går tur i skogen. Han har en kvikklunsj til deg."];
+        let currentSpådom = "";
+        let currentIndex = 0
+        let randomIndex = 0
+
+
+
+        //View
+            updateView()
+            function updateView(){
+                let html = /* HTML */ `
+                <h1>Få en spådom fra den magiske ballen!</h1>
+                <h3>Trykk på den for å starte</h3>
+                <div id="magic8" onclick="getRandomAnswer()">8</div>
+
+
+                <div>${currentSpådom}</div>
+                `
+            
+                document.getElementById('myID').innerHTML = html
+            }
+
+        //Controller
+            function getRandomAnswer(){
+                if (randomIndex === currentIndex){
+                    randomIndex = Math.floor(Math.random() * spådommer.length)
+                    getRandomAnswer()
+                }
+                currentIndex = randomIndex
+                currentSpådom = spådommer[randomIndex]
+                updateView()
+            }
+
+
+    </script>
+</body>
+</html>
