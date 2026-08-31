@@ -3,3 +3,5 @@ Lag din egen Magic 8 Ball der man får et tilfeldig råd av den magiske, overdim
   Ekstra: Gjør det slik at man aldri kan få det samme rådet etter hverandre.
 
 Bruk MVC, variabler, arrays og random for å løse oppgaven.
+
+https://shironishi.github.io/Magic-8-Ball/
